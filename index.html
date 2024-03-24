@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Antony's Porfolio Page">
+    <link rel="icon" href="assets/imgs/tologo.png" type="image/x-icon" />
+    <meta name="author" content="Tony">
+    <title>Antony's Porfolio</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + styles css -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+        
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="index.html">Tony</a>
+            <ul class="nav">
+                <li class="item">
+                    <a class="link" href="#home">Home</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#about">About</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#testmonial">Testmonial</a>
+                </li>
+                <li class="item">
+                    <a class="link" href="#service">Skills</a>
+                </li>
+                <li class="item ml-md-3">
+                    <a href="#contact" class="btn btn-primary">Contact</a>
+                </li>
+            </ul>
+            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
+            </a>
+        </div>
+    </nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am Antony Mutisya</span>
+            </h1>
+            <p class="header-subtitle">FULLSTACK SOFTWARE ENGINEER | GRAPHIC DESIGNER 
+                | ANIMATOR | PHOTOGRAPHER & VIDEOGRAPHER</p>
+
+                <!-- <button class="btn btn-primary" onclick="smoothScroll('about')">Visit My Works</button> -->
+                <button class="btn btn-primary" onclick="scrollToPortfolio()">I'm Curious</button>
+        </div>
+    </header><!-- end of page header -->
+
+    <!-- about section -->
+    <section class="section pt-0" id="about">
+        <!-- container -->
+        <div class="container text-center">
+            <!-- about wrapper -->
+            <div class="about">
+                <div class="about-img-holder">
+                    <img src="assets/imgs/man.png" class="about-img"
+                        alt="about me">
+                </div>
+                <div class="about-caption">
+                    <p class="section-subtitle">Who Am I ?</p>
+                    <h2 class="section-title mb-3">About Me</h2>
+                    <p>
+                        Hey there, I'm Tony, a Tech-Creative Maverick!
+                        <br>I am a multidimensional professional passionate about crafting captivating experiences.
+                    </p>
+                    <p>
+                        When I'm not immersed in lines of code or wielding a camera, you'll find me exploring the
+                        intersection of technology and art. Whether it's delving into the latest tech trends, 
+                        experimenting with new design techniques, or seeking inspiration in the great outdoors, 
+                        I am constantly evolving as a creator.
+                    </p>
+                    <button class="btn btn-rounded btn-outline-primary mt-4" onclick="scrollToSkills()">My Skills and Services</button>
+                </div>
+            </div><!-- end of about wrapper -->
+        </div><!-- end of container -->
+    </section> <!-- end of about section -->
+
+
+
+
+    <!-- service and skills section -->
+    <section class="section" id="service">
+        <div class="container text-center">
+            <p class="section-subtitle">What I am Good at!</p>
+            <h6 class="section-title mb-6">My Skills</h6>
+            <!-- row -->
+            <div class="row">
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/responsive.svg"
+                            alt="Tony"
+                                class="icon">
+                            <h6 class="title">Full-Stack Software Development</h6>
+                            <p class="subtitle">"I specialize in fullstack development, seamlessly bridging the gap between front-end and back-end technologies. 
+                                Using a versatile toolkit including HTML, CSS, JavaScript, React, Node.js/Express, PHP/Laravel and Java, I create dynamic and user-friendly 
+                                web and mobile applications. "
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/pencil-case.svg"
+                                alt="Tony"
+                                class="icon">
+                            <h6 class="title">Graphic Design</h6>
+                            <p class="subtitle"> "I communicate ideas through visually striking graphics and interfaces. 
+                                With expertise in Adobe Photoshop, Illustrator, Gimp, and InDesign, I create cohesive and memorable 
+                                designs that leave a lasting impression. I blend creativity 
+                                 with strategy to deliver designs that elevate brands and engage audiences."
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/toolbox.svg"
+                            alt="Tony"
+                                class="icon">
+                            <h6 class="title">Animation</h6>
+                            <p class="subtitle">"My passion for animation shines through in every project I undertake. With expertise in 2D and 3D animation,
+                                 I breathe life into characters and stories. Using tools such as Adobe After Effects, Blender, and Maya, I create captivating 
+                                 animations that entertain and engage audiences. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/analytics.svg"
+                            alt="Tony"
+                                class="icon">
+                            <h6 class="title">Photography and Videography</h6>
+                            <p class="subtitle">"I indulge in visual storytelling through photography and videography, capturing moments 
+                                 and crafting compelling narratives, using tools
+                                 like Adobe Premiere Pro, Final Cut Pro, and DaVinci Resolve. From cinematic shorts 
+                                 to captivating promotional videos, I bring creativity and to every project."
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end of row -->
+        </div>
+    </section><!-- end of service section -->
+
+    <!-- portfolio section -->
+    <section class="section" id="portfolio">
+        <div class="container text-center">
+            <p class="section-subtitle">Some of my most recent Works</p>
+            <h6 class="section-title mb-6">Portfolio</h6>
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-4 border mb-5 shadow shadow-lg">
+                    <a href="https://www.splashproeddyg.com" target="_blank" class="portfolio-card">
+                        <img src="assets/imgs/eddygpic.png" class="portfolio-card-img"
+                            alt="Tony">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>SplashPro</h5>
+                                    <p class="font-weight-normal">Category: Web Development</p>
+                            </span>
+                        </span>
+                    </a>
+
+                    <p class="mt-4 fs-4 lead"><a href="https://www.splashproeddyg.com" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
+
+                </div>
+                <div class="col-md-4 border mb-5 shadow shadow-lg">
+                    <a href="https://www.bonniescuisine.com" target="_blank" class="portfolio-card">
+                        <img src="assets/imgs/bonniecuisine.png" class="portfolio-card-img"
+                        alt="Tony">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>Bonnie's Cuisine</h5>
+                                    <p class="font-weight-normal">Category: Web Development</p>
+                            </span>
+                        </span>
+                    </a>
+
+                    <p class="mt-4 fs-4 lead"><a href="https://www.bonniescuisine.com" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
+
+                </div>
+                <div class="col-md-4 border mb-5 shadow shadow-lg">
+                    <a href="https://www.AcademicTreeHouse.com" target="_blank"  class="portfolio-card">
+                        <img src="assets/imgs/academictree.png" class="portfolio-card-img"
+                        alt="Tony">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>AcademicTreeHouse</h5>
+                                    <p class="font-weight-normal">Category: Web Development</p>
+                            </span>
+                        </span>
+                    </a>
+
+                    <p class="mt-4 fs-4 lead"><a href="https://www.AcademicTreeHouse.com" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
+
+                </div>
+                <div class="col-md-4 border mb-5 shadow shadow-lg">
+                    <a href="https://gifthealthcareservices.com/" target="_blank"  class="portfolio-card">
+                        <img src="assets/imgs/gifthealth.png" class="portfolio-card-img"
+                        alt="Tony">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>gifthealthcareservices</h5>
+                                    <p class="font-weight-normal">Category: Web Development</p>
+                            </span>
+                        </span>
+                    </a>
+
+                    <p class="mt-4 fs-4 lead"><a href="https://gifthealthcareservices.com/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
+
+                </div>
+                <div class="col-md-4 border mb-5 shadow shadow-lg">
+                    <a href="https://emmafarrphotography.com/" target="_blank"  class="portfolio-card">
+                        <img src="assets/imgs/faarrcrop.png" class="portfolio-card-img"
+                        alt="Tony">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>emmafarrphotography</h5>
+                                    <p class="font-weight-normal">Category: Web Development</p>
+                            </span>
+                        </span>
+                    </a>
+
+                    <p class="mt-4 fs-4 lead"><a href="https://emmafarrphotography.com/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
+
+                </div>
+                <div class="col-md-4 border mb-5 shadow shadow-lg">
+                    <a href="https://emeraldspices.com/" target="_blank"  class="portfolio-card">
+                        <img src="assets/imgs/spices.png" class="portfolio-card-img"
+                        alt="Tony">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>emeraldspices</h5>
+                                    <p class="font-weight-normal">Category: Web Development</p>
+                            </span>
+                        </span>
+                    </a>
+
+                    <p class="mt-4 fs-4 lead"><a href="https://emeraldspices.com/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
+
+                </div>
+            </div><!-- end of row -->
+        </div><!-- end of container -->
+    </section> <!-- end of portfolio section -->
+
+
+    
+    <!-- section -->
+    <section class="section-sm bg-primary">
+        <!-- container -->
+        <div class="container text-center text-sm-left">
+            <!-- row -->
+            <div class="row align-items-center">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                    <h6 class="title text-light">Want to work with me?</h6>
+                    <p class="m-0 text-light">Let's Build Something Extraordinary
+                        Whether it's collaborating on a cutting-edge app, designing a brand's visual identity, 
+                        animating a captivating story, or capturing moments that speak volumes, I'm here to bring 
+                        visions to life.                        
+                    </p>
+                </div>
+                <div class="col-sm offset-sm-2 offset-md-3">
+                    <button class="btn btn-lg my-font btn-light rounded" onclick="scrollToContact()">Contact Me</button>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of section -->
+
+    <!-- testimonial section -->
+    <section class="section" id="testmonial">
+        <div class="container text-center">
+            <p class="section-subtitle">What Think Client About Me ?</p>
+            <h6 class="section-title mb-6">Testmonial</h6>
+
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-img-holder">
+                            <img src="assets/imgs/avatar2.jpg" class="testimonial-card-img"
+                                alt="Tony">
+                        </div>
+                        <div class="testimonial-card-body">
+                            <p class="testimonial-card-subtitle">Tony is one of the most engaging creatives to work with. His talents
+                                are unnmatched and it is always a great experience getting to work with him. Would highly recommend.
+                            </p>
+                            <h6 class="testimonial-card-title">Jeremy Kenneth</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card-img-holder">
+                            <img src="assets/imgs/avatar3.jpg" class="testimonial-card-img"
+                                alt="Tony">
+                        </div>
+                        <div class="testimonial-card-body">
+                            <p class="testimonial-card-subtitle">Get in touch with Tony, he will help you realize your goals and guide 
+                                you along the digital road. His ideas are unnmatched!
+                            </p>
+                            <h6 class="testimonial-card-title">Emily Musili</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end of container -->
+    </section> <!-- end of testimonial section -->
+
+
+
+    <div class="row justify-content-center my-5">
+        <div class="col-6 text-center">
+            <h3>Let's connect, innovate, and create an experience together!</h3>
+        </div>
+    </div>
+
+
+    <!-- contact section -->
+    <section class="section" id="contact">
+        <div class="container text-center">
+            <p class="section-subtitle">How can you communicate?</p>
+            <h6 class="section-title mb-5">Contact Me</h6>
+            <!-- contact form -->
+            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <input type="email" class="form-control" placeholder="Enter Email" requried>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <textarea name="comment" id="comment" rows="6" class="form-control"
+                            placeholder="Let it Flow"></textarea>
+                    </div>
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
+                    </div>
+                </div>
+            </form><!-- end of contact form -->
+
+            <div> <a href="javascript:void(0)" class="link"><i class="ti-mobile"></i> +254719516641</a>
+             </div>
+            <div> <a href="javascript:void(0)" class="link"><i class="ti-email"></i> mutisya.antony@yahoo.com </a>
+             </div>
+            
+
+
+        </div><!-- end of container -->
+    </section><!-- end of contact section -->
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Antony's Portfolio
+                <script>document.write(new Date().getFullYear())</script> &copy; 
+            </p>
+            <!-- <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div> -->
+        </footer>
+    </div> <!-- end of page footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>
