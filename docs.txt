@@ -20,7 +20,7 @@ Form evaluation
 
 
 git config
-git config --global user.name "Your Name"
+git config --global user.name "Tony"
 git config --global user.email "jayton006@gmail.com"
 git config --global --list
 git remote -v
