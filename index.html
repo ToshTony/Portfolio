@@ -65,16 +65,18 @@
         </div>
     </header><!-- end of page header -->
 
-    <!-- about section -->
+
+
+     <!-- about section -->
     <section class="section pt-0" id="about">
         <!-- container -->
         <div class="container text-center">
             <!-- about wrapper -->
             <div class="about">
                 <div class="about-img-holder">
-                    <img src="assets/imgs/an.png" class="about-img"
-                        alt="">
+                    <canvas id="3dimage"></canvas>
                 </div>
+                
                 <div class="about-caption">
                     <p class="section-subtitle">Who Am I ?</p>
                     <h2 class="section-title mb-3">About Me</h2>
@@ -93,6 +95,7 @@
             </div><!-- end of about wrapper -->
         </div><!-- end of container -->
     </section> <!-- end of about section -->
+
 
 
 
@@ -401,6 +404,15 @@
             </div> -->
         </footer>
     </div> <!-- end of page footer -->
+    <script type="importmap">
+        {
+            "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="3d.js"></script>
 
     <!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>

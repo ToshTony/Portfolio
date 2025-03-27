@@ -12204,13 +12204,13 @@ pre .code {
             flex-direction: column;
     text-align: center;
   }
-  .about-img-holder {
+  /* .about-img-holder {
     max-width: 220px;
     min-width: 100%;
     width: 100%;
     margin: auto;
     margin-bottom: 20px;
-  }
+  } */
 }
 
 /* sections */
