@@ -5,7 +5,7 @@ Add Captcha
 Form evaluation
     
 
-
+- Check responsiveness of scene.
 
 git config
 git config --global user.name "Tony"
