@@ -1,98 +1,225 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import * as THREE from "three";
 
-const canvas = document.getElementById('3dimage');
+(function () {
+  const canvas = document.getElementById("hero-canvas");
+  if (!canvas) return;
 
-// 1. Create the scene
-const scene = new THREE.Scene();
-// scene.background = new THREE.Color('#F0F0F0');
-scene.background = new THREE.Color('#FFFFFF');
+  const motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// 2. Add the Camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.z = 4;
+  /* ---- Renderer ---- */
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-// 3. Create and add a cube object
-const geometry = new THREE.DodecahedronGeometry();
-const material = new THREE.MeshLambertMaterial({color: '#468585', emmisive: '#468585'});
-const dodecahedron = new THREE.Mesh(geometry, material);
-scene.add(dodecahedron);
+  /* ---- Scene & Camera ---- */
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 120);
+  camera.position.set(0, 5, 18);
+  camera.lookAt(0, 0, 0);
 
+  /* ---- Particle Grid ---- */
+  const cols = 50;
+  const rows = 50;
+  const spacing = 0.55;
+  const count = cols * rows;
 
-const boxgeometry = new THREE.BoxGeometry(2, 0.1, 2);
-const Boxmaterial = new THREE.MeshStandardMaterial({color: '#B4B4B3', emmisive:'#B4B4B3'});
-const box = new THREE.Mesh(boxgeometry, Boxmaterial);
-box.position.y = -1.5; 
-scene.add(box);
+  const positions = new Float32Array(count * 3);
+  const baseY = new Float32Array(count);
+  const scales = new Float32Array(count);
 
+  const colors = new Float32Array(count * 3);
 
-// 4. Add Lighting 
-const light = new THREE.SpotLight(0x006769, 100);
-light.position.set(1, 1, 1);
-scene.add(light);
+  for (let ix = 0; ix < cols; ix++) {
+    for (let iz = 0; iz < rows; iz++) {
+      const i = ix * rows + iz;
+      const x = (ix - cols / 2) * spacing;
+      const z = (iz - rows / 2) * spacing;
 
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = 0;
+      positions[i * 3 + 2] = z;
+      baseY[i] = 0;
 
-const light2 = new THREE.SpotLight(0x006769, 100);
-light2.position.set(-1, 1, -1);
-scene.add(light2);
+      scales[i] = Math.random() < 0.08 ? 2.5 : 1.0;
+    }
+  }
 
-const light3 = new THREE.SpotLight(0x690200, 100);
-light3.position.set(0, -5, 0);
-scene.add(light3);
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+  geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+  geo.setAttribute("aScale", new THREE.BufferAttribute(scales, 1));
 
+  function updateThemeColors(isLight) {
+    const accentColor = new THREE.Color(isLight ? 0x4f46e5 : 0x646cff);
+    const fadedColor = new THREE.Color(isLight ? 0xbac0cc : 0x2a2a3e);
 
-// 5. Set up the renderer
-const renderer = new THREE.WebGLRenderer({canvas});
-renderer.setSize(400,400);
-renderer.setPixelRatio(window.devicePixelRatio);
+    for (let ix = 0; ix < cols; ix++) {
+      for (let iz = 0; iz < rows; iz++) {
+        const i = ix * rows + iz;
+        const x = (ix - cols / 2) * spacing;
+        const z = (iz - rows / 2) * spacing;
+        const dist = Math.sqrt(x * x + z * z);
+        const maxDist = (cols / 2) * spacing;
+        const t = Math.min(dist / maxDist, 1);
+        const col = accentColor.clone().lerp(fadedColor, t * t);
+        colors[i * 3] = col.r;
+        colors[i * 3 + 1] = col.g;
+        colors[i * 3 + 2] = col.b;
+      }
+    }
+    geo.attributes.color.needsUpdate = true;
+  }
 
+  // Initial color set
+  updateThemeColors(document.documentElement.getAttribute("data-theme") === "light");
 
-// 6. Add Orbit Controls
+  /* ---- Shader Material ---- */
+  const vertexShader = `
+    attribute float aScale;
+    varying vec3 vColor;
+    varying float vAlpha;
 
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.05;
-controls.enableZoom = true;
-controls.enablePan = true;
+    uniform float uTime;
+    uniform vec2 uMouse;
 
+    void main() {
+      vColor = color;
+      vec3 pos = position;
 
-// 7. Animate the Scene
+      // Wave displacement
+      float d = length(pos.xz);
+      pos.y = sin(d * 0.35 - uTime * 1.2) * 1.2
+             + sin(pos.x * 0.4 + uTime * 0.8) * 0.4
+             + cos(pos.z * 0.3 + uTime * 0.6) * 0.3;
 
-function animate(){
-    requestAnimationFrame(animate);
+      // Mouse proximity lift
+      float mouseDist = length(pos.xz - uMouse * 8.0);
+      pos.y += exp(-mouseDist * 0.15) * 2.0;
 
-    dodecahedron.rotation.x += 0.01;
-    dodecahedron.rotation.y += 0.01;
+      vec4 mv = modelViewMatrix * vec4(pos, 1.0);
+      gl_PointSize = aScale * (220.0 / -mv.z);
+      gl_Position = projectionMatrix * mv;
 
-    box.rotation.y += 0.005;
-    controls.update();
+      // Fade with depth
+      vAlpha = smoothstep(60.0, 5.0, -mv.z);
+    }
+  `;
 
-    renderer.render(scene,camera);
+  const fragmentShader = `
+    varying vec3 vColor;
+    varying float vAlpha;
 
-}
+    void main() {
+      vec2 c = gl_PointCoord - 0.5;
+      float r = dot(c, c);
+      if (r > 0.25) discard;
 
+      float glow = exp(-r * 8.0);
+      gl_FragColor = vec4(vColor * (0.6 + glow * 0.8), vAlpha * glow);
+    }
+  `;
 
-// 8. Handle Window Resizing
+  const mat = new THREE.ShaderMaterial({
+    uniforms: {
+      uTime: { value: 0 },
+      uMouse: { value: new THREE.Vector2(0, 0) },
+    },
+    vertexShader,
+    fragmentShader,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    vertexColors: true,
+  });
 
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+  const particles = new THREE.Points(geo, mat);
+  particles.rotation.x = -0.35;
+  scene.add(particles);
+
+  /* ---- Floating accent meshes ---- */
+  const glowMat = new THREE.MeshBasicMaterial({
+    color: 0x646cff,
+    transparent: true,
+    opacity: 0.06,
+  });
+
+  const ring1 = new THREE.Mesh(
+    new THREE.TorusGeometry(4, 0.02, 16, 100),
+    glowMat
+  );
+  ring1.position.set(0, 0, -2);
+  ring1.rotation.x = Math.PI / 2.5;
+  scene.add(ring1);
+
+  const ring2 = new THREE.Mesh(
+    new THREE.TorusGeometry(6, 0.015, 16, 120),
+    glowMat.clone()
+  );
+  ring2.material.opacity = 0.03;
+  ring2.position.set(0, 0, -3);
+  ring2.rotation.x = Math.PI / 3;
+  scene.add(ring2);
+
+  /* ---- Mouse tracking ---- */
+  let mouseX = 0;
+  let mouseY = 0;
+  let targetMX = 0;
+  let targetMY = 0;
+
+  window.addEventListener("pointermove", (e) => {
+    targetMX = (e.clientX / window.innerWidth) * 2 - 1;
+    targetMY = -(e.clientY / window.innerHeight) * 2 + 1;
+  });
+
+  /* ---- Resize ---- */
+  function resize() {
+    const hero = document.querySelector(".hero");
+    const w = window.innerWidth;
+    const h = hero ? hero.clientHeight : window.innerHeight;
+    camera.aspect = w / h;
     camera.updateProjectionMatrix();
-    renderer.setSize(400, 400);
-});
+    renderer.setSize(w, h, false);
+  }
+  window.addEventListener("resize", resize);
+  resize();
 
-animate();
+  /* ---- Render Loop ---- */
+  const clock = new THREE.Clock();
 
+  function tick() {
+    const t = clock.getElapsedTime();
 
+    if (motionOk) {
+      mat.uniforms.uTime.value = t;
 
- 
+      // Smooth mouse
+      mouseX += (targetMX - mouseX) * 0.04;
+      mouseY += (targetMY - mouseY) * 0.04;
+      mat.uniforms.uMouse.value.set(mouseX, mouseY);
 
+      // Gentle camera sway
+      camera.position.x += (mouseX * 2 - camera.position.x) * 0.02;
+      camera.position.y += (mouseY * 1.5 + 5 - camera.position.y) * 0.02;
+      camera.lookAt(0, 0, 0);
 
+      // Rotate rings
+      ring1.rotation.z = t * 0.1;
+      ring2.rotation.z = -t * 0.07;
+      ring1.rotation.y = Math.sin(t * 0.2) * 0.2;
+      ring2.rotation.y = Math.cos(t * 0.15) * 0.15;
+    }
 
+    renderer.render(scene, camera);
+    requestAnimationFrame(tick);
+  }
 
-
-
-
-
-
-
-
+  
+  window.addEventListener("themeChanged", (e) => {
+    const isLight = e.detail.isLight;
+    updateThemeColors(isLight);
+    mat.blending = isLight ? THREE.NormalBlending : THREE.AdditiveBlending;
+    mat.needsUpdate = true;
+    glowMat.color.set(isLight ? 0x222222 : 0x646cff);
+    glowMat.opacity = isLight ? 0.04 : 0.06;
+  });
+  tick();
+})();

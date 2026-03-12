@@ -1,429 +1,462 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Antony's Porfolio Page">
-    <link rel="icon" href="assets/imgs/tologo.png" type="image/x-icon" />
-    <meta name="author" content="Tony">
-    <title>Antony | Full-Stack Software Developer</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + styles css -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Antony Mutisya — Full-stack developer & creative technologist crafting modern digital experiences.">
+  <title>Antony Mutisya | Developer & Creative Technologist</title>
+  <link rel="icon" href="assets/imgs/tologo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+<body>
+  <div class="glow-cursor" id="glow-cursor"></div>
+  <div class="glow-cursor" id="glow-cursor"></div>
+  <div class="loader" id="loader">
+    <div class="loader-bar"></div>
+  </div>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-        <div class="container">
-            <a class="logo" href="index.html">Tony</a>
-            <ul class="nav">
-                <li class="item">
-                    <a class="link" href="#home">Home</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#about">About</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#portfolio">Portfolio</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#testmonial">Testimonials</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="#service">Skills</a>
-                </li>
-                <li class="item ml-md-3">
-                    <a href="#contact" class="btn btn-primary">Contact</a>
-                </li>
-            </ul>
-            <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
-                </div>
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a class="logo" href="#top" aria-label="Home">
+        <span class="logo-text">A</span>
+        <span class="logo-dot"></span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link" data-index="01">About</a></li>
+        <li><a href="#skills" class="nav-link" data-index="02">Skills</a></li>
+        <li><a href="#experience" class="nav-link" data-index="03">Experience</a></li>
+        <li><a href="#projects" class="nav-link" data-index="04">Projects</a></li>
+        <li><a href="#contact" class="nav-link" data-index="05">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle magnetic" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+          <span class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-gradient" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-label">
+            <span class="line"></span>
+            <span class="label-text">Full-Stack Developer & Creative Technologist</span>
+          </div>
+          <h1 id="hero-heading" class="hero-title">
+            <span class="title-line"><span class="word">I craft</span></span>
+            <span class="title-line"><span class="word">digital</span></span>
+            <span class="title-line"><span class="word">experiences</span> <span class="word accent">that</span></span>
+            <span class="title-line"><span class="word accent">stand out.</span></span>
+          </h1>
+          <p class="hero-description">
+            I'm Antony Mutisya — a multidisciplinary developer blending engineering, design, and motion to build products that feel fast, premium, and unforgettable.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-fill magnetic">
+              <span>View Work</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </a>
+            <a href="#contact" class="btn btn-outline magnetic">
+              <span>Get in Touch</span>
+            </a>
+          </div>
         </div>
-    </nav><!-- End of Page Navbar -->
-
-    <!-- page header -->
-    <header id="home" class="header">
-        <div class="overlay"></div>
-        <div class="header-content container">
-            <h1 class="header-title">
-                <span class="up">HI!</span>
-                <span class="down">I am Antony!</span>
-            </h1>
-            <p class="header-subtitle">FULL-STACK SOFTWARE DEVELOPER | GRAPHIC DESIGNER 
-                | ANIMATOR | PHOTOGRAPHER & VIDEOGRAPHER</p>
-
-                <!-- <button class="btn btn-primary" onclick="smoothScroll('about')">Visit My Works</button> -->
-                <button class="btn btn-primary" onclick="scrollToPortfolio()">I'm Curious</button>
+        <div class="hero-scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
         </div>
-    </header><!-- end of page header -->
+      </div>
+    </section>
 
+    <div class="interactive-divider" data-shape="torus"></div>
 
-
-     <!-- about section -->
-    <section class="section pt-0" id="about">
-        <!-- container -->
-        <div class="container text-center">
-            <!-- about wrapper -->
-            <div class="about">
-                <div class="about-img-holder">
-                    <canvas id="3dimage"></canvas>
-                </div>
-                
-                <div class="about-caption">
-                    <p class="section-subtitle">Who Am I ?</p>
-                    <h2 class="section-title mb-3">About Me</h2>
-                    <p>
-                        Hey there, I am Antony, a Tech-Creative Maverick!
-                        <br>I am a multidimensional professional passionate about crafting captivating experiences.
-                    </p>
-                    <p>
-                        When I'm not immersed in lines of code or wielding a camera, you'll find me exploring the
-                        intersection of technology and art. Whether it's delving into the latest tech trends, 
-                        experimenting with new design techniques, or seeking inspiration in the great outdoors, 
-                        I am constantly evolving as a creator.
-                    </p>
-                    <button class="btn btn-rounded btn-outline-primary mt-4" onclick="scrollToSkills()">My Skills and Services</button>
-                </div>
-            </div><!-- end of about wrapper -->
-        </div><!-- end of container -->
-    </section> <!-- end of about section -->
-
-
-
-
-
-    <!-- service and skills section -->
-    <section class="section" id="service">
-        <div class="container text-center">
-            <p class="section-subtitle">What I am Good at!</p>
-            <h6 class="section-title mb-6">My Skillset</h6>
-            <!-- row -->
-            <div class="row">
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/responsive.svg"
-                            alt="Tony"
-                                class="icon">
-                            <h6 class="title">Full-Stack Software Development</h6>
-                            <p class="subtitle">"I specialize in fullstack development, seamlessly bridging the gap between front-end and back-end technologies. 
-                                Using a versatile toolkit including HTML, CSS, JavaScript, React, Node.js/Express, PHP/Laravel and Java, I create dynamic and user-friendly 
-                                web and mobile applications. "
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/pencil-case.svg"
-                                alt="Tony"
-                                class="icon">
-                            <h6 class="title">Graphic Design</h6>
-                            <p class="subtitle"> "I communicate ideas through visually striking graphics and interfaces. 
-                                With expertise in Adobe Photoshop, Illustrator, Gimp, and InDesign, I create cohesive and memorable 
-                                designs that leave a lasting impression. I blend creativity 
-                                 with strategy to deliver designs that elevate brands and engage audiences."
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/toolbox.svg"
-                            alt="Tony"
-                                class="icon">
-                            <h6 class="title">Animation</h6>
-                            <p class="subtitle">"My passion for animation shines through in every project I undertake. With expertise in 2D and 3D animation,
-                                 I breathe life into characters and stories. Using tools such as Adobe After Effects, and Blender, I create captivating 
-                                 animations that entertain and engage audiences. 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="assets/imgs/analytics.svg"
-                            alt="Tony"
-                                class="icon">
-                            <h6 class="title">Photography and Videography</h6>
-                            <p class="subtitle">"I indulge in visual storytelling through photography and videography, capturing moments 
-                                 and crafting compelling narratives, using tools
-                                 like Adobe Premiere Pro, Final Cut Pro, and DaVinci Resolve. From cinematic shorts 
-                                 to captivating videos, I bring creativity and to every project."
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- end of row -->
+    <!-- ABOUT -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-label" data-anim="fade-up">
+          <span class="label-number">01</span>
+          <span class="label-line"></span>
+          <span>About</span>
         </div>
-    </section><!-- end of service section -->
-
-
-
-    <!-- portfolio section -->
-    <section class="section" id="portfolio">
-        <div class="container text-center">
-            <p class="section-subtitle">Some of my latest creations</p>
-            <h6 class="section-title mb-6">Portfolio</h6>
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-4 border mb-5 shadow shadow-lg">
-                    <a href="https://toshtony.github.io/RentalApp/" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/rentals-pic.png" class="portfolio-card-img"
-                            alt="Tony">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>MutanuRentals</h5>
-                                    <p class="font-weight-normal">Category: Web Development</p>
-                            </span>
-                        </span>
-                    </a>
-
-                    <p class="mt-4 fs-4 lead"><a href="https://toshtony.github.io/RentalApp/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
-
-                </div>
-                <div class="col-md-4 border mb-5 shadow shadow-lg">
-                    <a href="https://toshtony.github.io/Wangecis-Kitchen/" target="_blank" class="portfolio-card">
-                        <img src="assets/imgs/kitchen-pic.png" class="portfolio-card-img"
-                        alt="Tony">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Wangeci's Kitchen</h5>
-                                    <p class="font-weight-normal">Category: Web Development</p>
-                            </span>
-                        </span>
-                    </a>
-
-                    <p class="mt-4 fs-4 lead"><a href="https://toshtony.github.io/Wangecis-Kitchen/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
-
-                </div>
-                <div class="col-md-4 border mb-5 shadow shadow-lg">
-                    <a href="https://gifthealthcareservices.com/" target="_blank"  class="portfolio-card">
-                        <img src="assets/imgs/gifthealth.png" class="portfolio-card-img"
-                        alt="Tony">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>gifthealthcareservices</h5>
-                                    <p class="font-weight-normal">Category: Web Development</p>
-                            </span>
-                        </span>
-                    </a>
-
-                    <p class="mt-4 fs-4 lead"><a href="https://gifthealthcareservices.com/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
-
-                </div>
-                <div class="col-md-4 border mb-5 shadow shadow-lg">
-                    <a href="https://emmafarrphotography.com/" target="_blank"  class="portfolio-card">
-                        <img src="assets/imgs/faarrcrop.png" class="portfolio-card-img"
-                        alt="Tony">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>emmafarrphotography</h5>
-                                    <p class="font-weight-normal">Category: Web Development</p>
-                            </span>
-                        </span>
-                    </a>
-
-                    <p class="mt-4 fs-4 lead"><a href="https://emmafarrphotography.com/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
-
-                </div>
-                <div class="col-md-4 border mb-5 shadow shadow-lg">
-                    <a href="https://www.AcademicTreeHouse.com" target="_blank"  class="portfolio-card">
-                        <img src="assets/imgs/academictree.png" class="portfolio-card-img"
-                        alt="Tony">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>AcademicTreeHouse</h5>
-                                    <p class="font-weight-normal">Category: Web Development</p>
-                            </span>
-                        </span>
-                    </a>
-
-                    <p class="mt-4 fs-4 lead"><a href="https://www.AcademicTreeHouse.com" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
-
-                </div>
-                <div class="col-md-4 border mb-5 shadow shadow-lg">
-                    <a href="https://emeraldspices.com/" target="_blank"  class="portfolio-card">
-                        <img src="assets/imgs/spices.png" class="portfolio-card-img"
-                        alt="Tony">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>emeraldspices</h5>
-                                    <p class="font-weight-normal">Category: Web Development</p>
-                            </span>
-                        </span>
-                    </a>
-
-                    <p class="mt-4 fs-4 lead"><a href="https://emeraldspices.com/" class="border rounded-pill p-2" target="_blank">Visit Site</a></p>
-
-                </div>
-            </div><!-- end of row -->
-        </div><!-- end of container -->
-    </section> <!-- end of portfolio section -->
-
-
-    
-    <!-- section -->
-    <section class="section-sm bg-primary">
-        <!-- container -->
-        <div class="container text-center text-sm-left">
-            <!-- row -->
-            <div class="row align-items-center">
-                <div class="col-sm offset-md-1 mb-4 mb-md-0">
-                    <h6 class="title text-light">Want to work with me?</h6>
-                    <p class="m-0 text-light">Let's Build Something Extraordinary
-                        Whether it's collaborating on a cutting-edge app, designing a brand's visual identity, 
-                        animating a captivating story, or capturing moments that speak volumes, I'm here to bring 
-                        visions to life.                        
-                    </p>
-                </div>
-                <div class="col-sm offset-sm-2 offset-md-3">
-                    <button class="btn btn-lg my-font btn-light rounded" onclick="scrollToContact()">Contact Me</button>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of section -->
-
-    <!-- testimonial section -->
-    <section class="section" id="testmonial">
-        <div class="container text-center">
-            <p class="section-subtitle">Reviews from Clients</p>
-            <h6 class="section-title mb-6">Testimonials and Reviews</h6>
-
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar2.jpg" class="testimonial-card-img"
-                                alt="Tony">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Tony is one of the most engaging creatives to work with. His talents
-                                are unnmatched and it is always a great experience getting to work with him. Would highly recommend.
-                            </p>
-                            <h6 class="testimonial-card-title">Jeremy K.</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar3.jpg" class="testimonial-card-img"
-                                alt="Tony">
-                        </div>
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Get in touch with Tony, he will help you realize your goals and guide 
-                                you along the digital road. His ideas are unnmatched!
-                            </p>
-                            <h6 class="testimonial-card-title">Emily M.</h6>
-                        </div>
-                    </div>
-                </div>
+        <div class="about-grid">
+          <div class="about-text" data-anim="fade-up" data-delay="0.1">
+            <h2 id="about-heading" class="section-title">Turning ambitious ideas into polished digital products.</h2>
+            <p>I'm a multidisciplinary creator who blends engineering precision with visual design instincts. My work sits at the intersection of software, storytelling, and interaction design.</p>
+            <p>From architecture to animation, I build experiences that are clear, performant, and emotionally engaging. Every interface is shaped for real users, business goals, and long-term maintainability.</p>
+          </div>
+          <div class="about-cards">
+            <div class="info-card" data-anim="fade-up" data-delay="0.2">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <h3>Full-Stack Delivery</h3>
+              <p>Frontend systems, backend APIs, deployment, and optimization — one cohesive workflow.</p>
             </div>
-        </div> <!-- end of container -->
-    </section> <!-- end of testimonial section -->
-
-
-
-    
-    <div class="section">
-        <div class="container">
-            <div class="row justify-content-center my-5">
-                <div class="col-6 text-center">
-                    <h3>Let's connect, innovate, and create an experience together!</h3>
-                </div>
+            <div class="info-card" data-anim="fade-up" data-delay="0.3">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <h3>Creative Direction</h3>
+              <p>Strong brand visuals, motion language, and UX consistency across web and media.</p>
             </div>
+            <div class="info-card" data-anim="fade-up" data-delay="0.4">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <h3>Performance Mindset</h3>
+              <p>Lean code, optimized assets, and smooth interactions on every device.</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <div class="interactive-divider" data-shape="icosahedron"></div>
+
+    <!-- SKILLS -->
+    <section class="section section-dark" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-label" data-anim="fade-up">
+          <span class="label-number">02</span>
+          <span class="label-line"></span>
+          <span>Skills</span>
+        </div>
+        <h2 id="skills-heading" class="section-title" data-anim="fade-up" data-delay="0.1">Tech stack built for product velocity and craft.</h2>
+        <div class="skills-grid">
+          <div class="skill-item" data-anim="fade-up" data-delay="0.1">
+            <div class="skill-header">
+              <h3>Frontend Engineering</h3>
+              <span class="skill-pct">95%</span>
+            </div>
+            <p>HTML, CSS, JavaScript, React, responsive architecture, component systems.</p>
+            <div class="skill-bar"><div class="skill-fill" data-level="95"></div></div>
+          </div>
+          <div class="skill-item" data-anim="fade-up" data-delay="0.2">
+            <div class="skill-header">
+              <h3>Backend Engineering</h3>
+              <span class="skill-pct">90%</span>
+            </div>
+            <p>Node.js, Express, PHP/Laravel, REST APIs, auth flows, SQL & cloud.</p>
+            <div class="skill-bar"><div class="skill-fill" data-level="90"></div></div>
+          </div>
+          <div class="skill-item" data-anim="fade-up" data-delay="0.3">
+            <div class="skill-header">
+              <h3>Design & Motion</h3>
+              <span class="skill-pct">88%</span>
+            </div>
+            <p>Photoshop, Illustrator, After Effects, Blender, cinematic visual direction.</p>
+            <div class="skill-bar"><div class="skill-fill" data-level="88"></div></div>
+          </div>
+          <div class="skill-item" data-anim="fade-up" data-delay="0.4">
+            <div class="skill-header">
+              <h3>Media Production</h3>
+              <span class="skill-pct">86%</span>
+            </div>
+            <p>Photography, videography, editing pipelines, color grading, narrative.</p>
+            <div class="skill-bar"><div class="skill-fill" data-level="86"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="interactive-divider" data-shape="knot"></div>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="exp-heading">
+      <div class="container">
+        <div class="section-label" data-anim="fade-up">
+          <span class="label-number">03</span>
+          <span class="label-line"></span>
+          <span>Experience</span>
+        </div>
+        <h2 id="exp-heading" class="section-title" data-anim="fade-up" data-delay="0.1">A track record of shipping outcomes, not just deliverables.</h2>
+        <div class="timeline">
+          <article class="timeline-entry" data-anim="fade-up" data-delay="0.15">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2025 — Present</span>
+              <h3>Independent Full-Stack Developer</h3>
+              <p>Leading end-to-end builds for business websites, booking platforms, and service-driven portals. Delivering production-ready code with a focus on conversion and performance.</p>
+            </div>
+          </article>
+          <article class="timeline-entry" data-anim="fade-up" data-delay="0.25">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2023 — 2025</span>
+              <h3>Creative Technologist</h3>
+              <p>Combined development with branding and visual content production for digital-first campaigns. Built and shipped projects across web, design, and media.</p>
+            </div>
+          </article>
+          <article class="timeline-entry" data-anim="fade-up" data-delay="0.35">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">Core Milestones</span>
+              <h3>Multi-Disciplinary Delivery</h3>
+              <p>Architected and launched production projects spanning web development, design systems, animation pipelines, and media production workflows.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="interactive-divider" data-shape="octahedron"></div>
+
+    <!-- PROJECTS -->
+    <section class="section section-dark" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-label" data-anim="fade-up">
+          <span class="label-number">04</span>
+          <span class="label-line"></span>
+          <span>Work</span>
+        </div>
+        <h2 id="projects-heading" class="section-title" data-anim="fade-up" data-delay="0.1">Selected projects combining strategy, engineering, & style.</h2>
+        <div class="projects-grid">
+
+          <a href="https://toshtony.github.io/RentalApp/" target="_blank" rel="noopener noreferrer" class="project-card" data-anim="fade-up" data-delay="0.1">
+            <div class="project-image">
+              <img src="assets/imgs/rentals-pic.png" alt="MutanuRentals project" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-num">01</span>
+                <span class="project-type">Web Platform</span>
+              </div>
+              <h3>MutanuRentals</h3>
+              <div class="project-tags"><span>UI/UX</span><span>Responsive</span><span>Listings</span></div>
+            </div>
+          </a>
+
+          <a href="https://toshtony.github.io/Wangecis-Kitchen/" target="_blank" rel="noopener noreferrer" class="project-card" data-anim="fade-up" data-delay="0.2">
+            <div class="project-image">
+              <img src="assets/imgs/kitchen-pic.png" alt="Wangeci's Kitchen project" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-num">02</span>
+                <span class="project-type">Brand Website</span>
+              </div>
+              <h3>Wangeci's Kitchen</h3>
+              <div class="project-tags"><span>Branding</span><span>Food Tech</span><span>Content</span></div>
+            </div>
+          </a>
+
+          <a href="https://gifthealthcareservices.com/" target="_blank" rel="noopener noreferrer" class="project-card" data-anim="fade-up" data-delay="0.3">
+            <div class="project-image">
+              <img src="assets/imgs/gifthealth.png" alt="Gift Healthcare Services" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-num">03</span>
+                <span class="project-type">Healthcare</span>
+              </div>
+              <h3>Gift Healthcare Services</h3>
+              <div class="project-tags"><span>Accessibility</span><span>Trust UI</span><span>Medical</span></div>
+            </div>
+          </a>
+
+          <a href="https://emmafarrphotography.com/" target="_blank" rel="noopener noreferrer" class="project-card" data-anim="fade-up" data-delay="0.15">
+            <div class="project-image">
+              <img src="assets/imgs/faarrcrop.png" alt="Emma Farr Photography" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-num">04</span>
+                <span class="project-type">Photography Portfolio</span>
+              </div>
+              <h3>Emma Farr Photography</h3>
+              <div class="project-tags"><span>Gallery UX</span><span>Minimal</span><span>Fast Load</span></div>
+            </div>
+          </a>
+
+          <a href="https://www.AcademicTreeHouse.com" target="_blank" rel="noopener noreferrer" class="project-card" data-anim="fade-up" data-delay="0.25">
+            <div class="project-image">
+              <img src="assets/imgs/academictree.png" alt="Academic Tree House" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-num">05</span>
+                <span class="project-type">Education Platform</span>
+              </div>
+              <h3>Academic Tree House</h3>
+              <div class="project-tags"><span>Education</span><span>Conversion</span><span>UX</span></div>
+            </div>
+          </a>
+
+          <a href="https://emeraldspices.com/" target="_blank" rel="noopener noreferrer" class="project-card" data-anim="fade-up" data-delay="0.35">
+            <div class="project-image">
+              <img src="assets/imgs/spices.png" alt="Emerald Spices" loading="lazy">
+              <div class="project-overlay">
+                <span class="view-project">View Project
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-meta">
+                <span class="project-num">06</span>
+                <span class="project-type">E-Commerce</span>
+              </div>
+              <h3>Emerald Spices</h3>
+              <div class="project-tags"><span>Commerce</span><span>Brand</span><span>Sales UX</span></div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="interactive-divider" data-shape="cylinder"></div>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials" aria-labelledby="test-heading">
+      <div class="container">
+        <div class="section-label" data-anim="fade-up">
+          <span class="label-number">&mdash;</span>
+          <span class="label-line"></span>
+          <span>Testimonials</span>
+        </div>
+        <h2 id="test-heading" class="section-title" data-anim="fade-up" data-delay="0.1">People remember how your product made them feel.</h2>
+        <div class="testimonials-row">
+          <blockquote class="testimonial-card" data-anim="fade-up" data-delay="0.15">
+            <div class="quote-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.15"><path d="M11 7H7a4 4 0 00-4 4v6h6v-6H5a4 4 0 014-4V7zm12 0h-4a4 4 0 00-4 4v6h6v-6h-4a4 4 0 014-4V7z"/></svg>
+            </div>
+            <p>"Antony brings a rare blend of technical depth and creative intuition. Every collaboration felt intentional and high quality."</p>
+            <footer class="testimonial-author">
+              <img src="assets/imgs/avatar2.jpg" alt="" loading="lazy" width="40" height="40">
+              <div>
+                <cite>Jeremy K.</cite>
+                <span>Business Founder</span>
+              </div>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial-card" data-anim="fade-up" data-delay="0.25">
+            <div class="quote-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" opacity="0.15"><path d="M11 7H7a4 4 0 00-4 4v6h6v-6H5a4 4 0 014-4V7zm12 0h-4a4 4 0 00-4 4v6h6v-6h-4a4 4 0 014-4V7z"/></svg>
+            </div>
+            <p>"The final product was not only functional, it was beautiful and memorable. Antony elevated our entire digital presence."</p>
+            <footer class="testimonial-author">
+              <img src="assets/imgs/avatar3.jpg" alt="" loading="lazy" width="40" height="40">
+              <div>
+                <cite>Emily M.</cite>
+                <span>Creative Lead</span>
+              </div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <div class="interactive-divider" data-shape="sphere"></div>
+
+    <!-- CONTACT -->
+    <section class="section section-dark" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-label" data-anim="fade-up">
+          <span class="label-number">05</span>
+          <span class="label-line"></span>
+          <span>Contact</span>
+        </div>
+        <div class="contact-layout">
+          <div class="contact-info" data-anim="fade-up" data-delay="0.1">
+            <h2 id="contact-heading" class="section-title">Let's build something exceptional together.</h2>
+            <p>Available for freelance projects, product collaborations, and long-term engineering partnerships.</p>
+            <ul class="contact-links">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                <a href="tel:+254719516641">+254 719 516 641</a>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:mutisya.antony@yahoo.com">mutisya.antony@yahoo.com</a>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <a href="https://www.linkedin.com/in/antony-mumo-mutisya" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form" id="contact-form" data-anim="fade-up" data-delay="0.2" novalidate>
+            <div class="form-group">
+              <input type="text" id="name" name="name" required placeholder=" " autocomplete="name">
+              <label for="name">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder=" " autocomplete="email">
+              <label for="email">Your Email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+              <label for="message">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-fill magnetic">
+              <span>Send Message</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4z"/></svg>
+            </button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Antony Mutisya. All rights reserved.</p>
+      <a href="#top" class="back-top magnetic">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+      </a>
     </div>
+  </footer>
 
-
-    <!-- contact section -->
-    <section class="section" id="contact">
-        <div class="container text-center">
-            <p class="section-subtitle">Get in touch with me!</p>
-            <h6 class="section-title mb-5">Contact Me</h6>
-            <!-- contact form -->
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
-                <div class="form-row">
-                    <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email" requried>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6" class="form-control"
-                            placeholder="Let it Flow"></textarea>
-                    </div>
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
-                    </div>
-                </div>
-            </form><!-- end of contact form -->
-
-            <div> <a href="javascript:void(0)" class="link"><i class="ti-mobile"> Phone:</i> +254719516641</a>
-             </div>
-            <div> <a href="javascript:void(0)" class="link"><i class="ti-email"> Mail:</i> mutisya&#46antony&#64yahoo&#46com</a>
-             </div>
-            <div> <a href="https://www.linkedin.com/in/antony-mumo-mutisya" target="_blank" class="link"><i class="ti-linkedin"> LinkedIn:</i> Antony Mutisya</a>
-            </div>
-            
-
-
-        </div><!-- end of container -->
-    </section><!-- end of contact section -->
-
-    <!-- footer -->
-    <div class="container">
-        <footer class="footer">
-            <p class="mb-0">Antony's Portfolio ToshTony
-                <script>document.write(new Date().getFullYear())</script> &copy; 
-            </p>
-            <!-- <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
-            </div> -->
-        </footer>
-    </div> <!-- end of page footer -->
-    <script type="importmap">
-        {
-            "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
-            }
-        }
-    </script>
-    <script type="module" src="3d.js"></script>
-
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap 3 affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- script js -->
-    <script src="assets/js/scripts.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js"}}</script>
+  <script type="module" src="3d.js"></script>
+  <script type="module" src="objects.js"></script>
+  <script src="assets/js/scripts.js" defer></script>
 </body>
-
 </html>
